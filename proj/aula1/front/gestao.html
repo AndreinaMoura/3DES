@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Gestão de entregas</title>
+</head>
+
+<body>
+    <main onload="carregar()">
+        <div class="corpo">
+            <h1>gestão de entregas</h1>
+        </div>
+
+        <div class="corpo">
+            <div class="texto">
+                <label>Cliente:</label>
+                <label>Endereço:</label>
+                <label>Produto:</label>
+                <button>Gerar Pedido</button>
+            </div>
+            <div class="input">
+                <input id="cliente" type="text">
+                <input id="endereco" type="text">
+                <select name="" >
+                    <option value="" id="produto"></option>
+                </select>
+                <input id="data" type="text">
+            </div>
+        </div>
+        
+        <div class="corpo">
+            <div>
+                <p>Em execução</p>
+                <div class="bloco">
+                    <div>
+                        <p>Id: 66 Cliente: Yara Neto Júnior</p>
+                        <p>Endereço: Rua Brito de Souza, Centro, Americana. SP</p>
+                        <p>Horário: 8:22</p>
+                    </div>
+                    <div>
+                        <p>Produto: Refrigerante - Lata</p>
+                        <p>Data: 23/1/2023</p>
+                    </div>
+                    <div>
+                        <button class="btn">Enviar Entrega</button>
+                    </div>
+                </div>
+                <div class="bloco">
+                    <div>
+                        <p>Id: 66 Cliente: Yara Neto Júnior</p>
+                        <p>Endereço: Rua Brito de Souza, Centro, Americana. SP</p>
+                        <p>Horário: 8:22</p>
+                    </div>
+                    <div>
+                        <p>Produto: Refrigerante - Lata</p>
+                        <p>Data: 23/1/2023</p>
+                    </div>
+                    <div>
+                        <button class="btn">Enviar Entrega</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>A caminho</p>
+                <div class="bloco">
+                    <div>
+                        <p>Id: 66 Cliente: Yara Neto Júnior</p>
+                        <p>Endereço: Rua Brito de Souza, Centro, Americana. SP</p>
+                        <p>Horário: 8:22</p>
+                    </div>
+                    <div>
+                        <p>Produto: Refrigerante - Lata</p>
+                        <p>Data: 23/1/2023</p>
+                    </div>
+                    <div>
+                        <button class="btn">Enviar Entrega</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
