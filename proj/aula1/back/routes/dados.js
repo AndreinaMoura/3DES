@@ -9,6 +9,7 @@ router.get("/entregador/:entregador", dados.listarPedidosEntregador);
 router.get("/entregador/:entregador", dados.listarPedidosExecucao);
 router.get("/entregador/:entregador", dados.listarPedidosEntregues);
 router.get("/cozinha", dados.listarTodosPedidos);
+router.get("/gestao", dados.listarTodosPedidos);
 // router.delete("/pirateflix/:id", dados.excluirdados);
 
 module.exports = router;

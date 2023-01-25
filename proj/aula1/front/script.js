@@ -5,21 +5,17 @@ function carregar() {
         })
         .then((data) => {
             data.forEach(cada => {
-                let select = document.querySelector("#coisa")
+                let select = document.querySelector(".coisa").value
 
-                let novoItem = itemFilme.cloneNode(true)
                 let opn = select.cloneNode(true)
 
-                novoItem.classList.remove("modelo")
                 opn.classList.remove("modelo")
 
-                let imagem = novoItem.querySelector(".imagem")
                 let op = opn.querySelector("#produto")
 
-                imagem.src =  cada.imagem;
                 op.innerHTML = cada.produto;
 
-                document.querySelector("main").appendChild(novoItem);
+                document.querySelector(".input").appendChild(opn);
             })
         })
 }
