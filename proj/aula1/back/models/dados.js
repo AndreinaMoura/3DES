@@ -19,6 +19,9 @@ const novoEntregador = (model) => {
     return `INSERT INTO entregadores VALUES (default,'${model.nome}','${model.email}','${model.senha}','${model.veiculo}');`;
 }
 
+const novoCliente = (model) => {
+    return `INSERT INTO pedidos VALUES (default,'${model.nome}','${model.endereco}','${model.produto}','${model.data}','${model.hora_pedido}','${model.hora_entrega}','${model.hora_fim}','${model.entregador}');`;
+}
 
 
 module.exports = {
@@ -27,5 +30,6 @@ module.exports = {
     novoEntregador,
     listarPedidosEntregador,
     listarPedidosExecucao,
-    listarPedidosEntregues
+    listarPedidosEntregues,
+    novoCliente
 }

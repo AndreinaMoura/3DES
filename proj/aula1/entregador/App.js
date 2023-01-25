@@ -1,8 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Home from '../cozinha/index'
-import Pizzaria from '../entregador/index'
+// import login from '../entregador/index.js'
+import entregador from './src/pages/entregador/index'
 
 const Stack = createNativeStackNavigator();
 
@@ -10,8 +10,7 @@ export default function () {
   return(
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='Pizzaria' component={Pizzaria}/>
+      <Stack.Screen name='entregador' component={entregador}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -12,6 +12,18 @@ const novoEntregador = (req, res) => {
     });
 }
 
+const novoCliente = (req, res) => {
+    con.query(dados.novoCliente(req.body), (err, result) => {
+        if (err == null)
+            res.json("Pedido Cadastrado!").status(201).end();
+        else
+            if (err.sqlState == 23000)//Se o ni já está cadastrado
+                res.status(406).json(err).end();
+            else
+                res.status(500).json(err).end();
+    });
+}
+
 const listarPedidosEntregador = (req, res) => {
     con.query(dados.listarPedidosEntregador(req.params), (err, result) => {
         if (err == null)
@@ -68,5 +80,6 @@ module.exports = {
     novoEntregador,
     listarPedidosEntregador,
     listarPedidosExecucao,
-    listarPedidosEntregues
+    listarPedidosEntregues,
+    novoCliente
 }
