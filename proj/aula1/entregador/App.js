@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-// import login from '../entregador/index.js'
+import login from '../entregador/index.js'
 import entregador from './src/pages/entregador/index'
 
 const Stack = createNativeStackNavigator();
@@ -10,11 +10,22 @@ export default function () {
   return(
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name='login' component={login}/>
       <Stack.Screen name='entregador' component={entregador}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+
+
+
+
+
+
+
+
+
+
 //   const [info, setInfo] = useState("")
 
 //   const salvar = async () => {

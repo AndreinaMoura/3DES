@@ -2,6 +2,8 @@ import { ScrollView, View, Text, TouchableOpacity, Image, StyleSheet} from 'reac
 import ButtonCarrinho from '../../Components/ButtonCarrinho';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import style from './src/style/style'
+
 export default function entregador ({navigation}){
   
     const pizza = [
@@ -44,29 +46,9 @@ export default function entregador ({navigation}){
       }
 
     return (
-        <View>
-            {
-                pizza.map((item, index) => {
-                    return(
-                        <ScrollView key={index}> 
-                        <TouchableOpacity style={styles.container} key={index} >
-                            <Image style={styles.img} source={item.img}/>
-                            <View>
-                            <Text style={styles.text1}>{item.Nome}</Text>
-                            <Text style={styles.text}>{item.Descricao}</Text>
-                            </View>
-                            <TouchableOpacity>
-                            <Image style={styles.img_add} source={item.adicionar} />
-                            </TouchableOpacity>
-                        </TouchableOpacity>
-                        </ScrollView> 
-                    )
-                })
-               
-            }
-              <ButtonCarrinho value='Carrinho' onPress={navigation.navigate('Pizzaria')} />
-           
-        </View>
+       <View>
+        
+       </View>
     )
 }
 
