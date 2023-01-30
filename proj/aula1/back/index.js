@@ -1,13 +1,17 @@
-const express = require("express");
-const cors = require("cors");
+require('dotenv').config();
+const PORT = process.env.PORT || 5000
+const express = require('express');
+const cors = require('cors');
 
-const dados = require('../back/routes/dados')
+const entregadores = require('./src/routes/Entregadores.routes');
+const pedidos = require('./src/routes/Pedidos.routes');
 
 const app = express()
     .use(express.json())
     .use(cors())
-    .use(dados)
+    .use(entregadores)
+    .use(pedidos)
 
-app.listen(3000, () => {
-    console.log('Funciona');
-})
+app.listen(PORT, () => {
+    console.log('Servidor em execução na porta ' + PORT);
+});

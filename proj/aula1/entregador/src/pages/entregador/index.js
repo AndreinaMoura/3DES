@@ -1,86 +1,152 @@
-import { ScrollView, View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
-import ButtonCarrinho from '../../Components/ButtonCarrinho';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import {View, Text, TouchableOpacity} from 'react-native';
+// import {useState, useEffect} from 'react';
 
-import style from './src/style/style'
+// import style from './src/style/style'
 
-export default function entregador ({navigation}){
-  
-    const pizza = [
-        { 
-            'img' : 'https://cdn.e-konomista.pt/uploads/2020/03/pizza-bimby-.jpg',
-            'Nome': 'Calabresa',
-            'Descricao': 'Molho de Tomate, Calabresa, Queijo',
-            'adicionar': 'https://th.bing.com/th/id/OIP.4G-vwUxG23uO8Nh89uQmpgHaHa?pid=ImgDet&w=980&h=980&rs=1'
-        },
-        {
-            'img' : 'https://th.bing.com/th/id/OIP.AxHaVQ59M1oUYW4_E_ixswHaFS?pid=ImgDet&rs=1',
-            'Nome': 'Marguerita',
-            'Descricao': 'Molho de tomate, queijo, tomate, cebola, salsinha',
-            'adicionar': 'https://th.bing.com/th/id/OIP.4G-vwUxG23uO8Nh89uQmpgHaHa?pid=ImgDet&w=980&h=980&rs=1'
-        },
+// export default function entregador ({route}){
+// const [pedidos, setPedidos]=useState([]);
 
-        {
-            'img' : 'https://th.bing.com/th/id/R.d2c11fc8eedfb2bc401502ee4c1193be?rik=TTOMD%2bJpe5sURQ&riu=http%3a%2f%2fwww.blizzstatic.com%2fdynamicmedia%2fimage%2f115%2f5b05e33bcc149.jpg%3fw%3d1200%26zc%3d1&ehk=JuKc%2fmixOo4oKK4SuDy241m4MpHkPOj9IDzRsiuI%2f1c%3d&risl=&pid=ImgRaw&r=0',
-            'Nome': 'Quatro Queijos',
-            'Descricao': 'Molho de tomate, queijo',
-            'adicionar': 'https://th.bing.com/th/id/OIP.4G-vwUxG23uO8Nh89uQmpgHaHa?pid=ImgDet&w=980&h=980&rs=1'
-        },
+// const {id, nome} = route.params;
 
-        {
-            'img' : 'https://portlandiapielady.com/wp-content/uploads/2020/05/Feature-1-scaled.jpg',
-            'Nome': 'Portuguesa a moda brasileira',
-            'Descricao': 'Molho de tomate, presunto, queijo, azeitona, cebola, tomate, pimentao, bacon',
-            'adicionar': 'https://th.bing.com/th/id/OIP.4G-vwUxG23uO8Nh89uQmpgHaHa?pid=ImgDet&w=980&h=980&rs=1'
-        }
-    ]
+// useEffect(()=>{
+// listarPedidos();
+// },[])
 
-      var carrinho = new Array();
+// const listarPedidos=()=>{
+//   fetch(""+id)
+//   .then(response =>{return response.json()})
+//   .then(data=>{
+//     setPedidos(data);
+//   })
+// }
 
-      const salvar = async () => {
-        try {
-          await AsyncStorage.setItem('carrinho', JSON.stringify(carrinho));
-        } catch (err) {
-          console.log(err)
-        }
-      }
+// const finalizarPedido=(id)=>{
+//   fetch(""+id,{
+//     "method":"PUT"
+//   })
+//   .then(response =>{
+//     if(response.status === 200){
+//       console.log("Pedido finalizado");
+//       listarPedidos();
+//     }else{
+//       console.log(response.status);
+//     }
+//   })
+// }
+
+//     return (
+//        <View>
+// <Text>HOME</Text>
+// <Text>Entregador: {nome}</Text>
+// {
+//   pedidos.map((pedido, index)=>{
+//     return(
+//       // <Text>HOME</Text>
+//       // <Text>HOME</Text>
+//       // <Text>HOME</Text>
+//       // <TouchableOpacity onPress={}>
+//       //   <Text>Pedido entregue</Text>
+//       // </TouchableOpacity>
+//     )
+//   })
+// }        
+//        </View>
+//     )
+// }
+
+import { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+
+import styles from '../style/style'
+
+export default function Home({ navigation }) {
+    const [tarefasA, setTarefasA] = useState([])
+
+    useEffect(() => {
+        setInterval(() => {
+            console.log('Atualizando lista')
+            listarTarefas()
+        }, 1500)
+    }, [])
+
+
+    const listarTarefas = () => {
+        fetch('http://localhost:3000/tarefasAbertas')
+            .then(res => { return res.json() })
+            .then(data => {
+                setTarefasA(data)
+            })
+    }
+
+
+    const finalizar = (id) => {
+        listarTarefas()
+        const options = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: `{"id_tarefa":${id}, "id_status_t": 2 }`
+        };
+
+        fetch('http://localhost:3000/alterar', options)
+            .then(res => {
+                if (res.status === 200) {
+                    console.log('Tarefa concluida')
+                    window.location.reload()
+                }
+            })
+    }
+
+    const cancelar = (id) => {
+        listarTarefas()
+        const options = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: `{"id_tarefa":${id}, "id_status_t": 3 }`
+        };
+
+        fetch('http://localhost:3000/alterar', options)
+            .then(res => {
+                if (res.status === 200) {
+                    console.log('Tarefa cancelada')
+                    window.location.reload()
+                }
+            })
+    }
+
 
     return (
-       <View>
-        
-       </View>
+        <View style={styles.viewG}>
+            <View style={styles.view}>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                     navigation.navigate('Nova')
+                }} ><Text>Adicionar Tarefas</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={()=> {
+                    navigation.navigate('tarefas')
+                }}><Text>Listar Tarefas</Text></TouchableOpacity>
+            </View>
+
+            <Text style={styles.titulo}>Tarefas Abertas</Text>
+            {
+                tarefasA.map((t, index) => {
+                    return (
+                        <View key={index} style={styles.viewTarefa}>
+                            <Text style={styles.Text}>Descrição da tarefa: {t.descricao}</Text>
+                            <Text style={styles.Text}>Horário da tarefa: {t.hora_tarefa}</Text>
+                            <Text style={styles.Text}>Status {t.status}</Text>
+                            <View style={styles.ArrumarBotoes}>
+                                <TouchableOpacity style={styles.buttonCancelar} onPress={() => {
+                                    cancelar(t.id_tarefa)
+                                }}><Text>Cancelar</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.buttonFinalizar} onPress={() => {
+                                    finalizar(t.id_tarefa)
+                                }}><Text>Finalizar</Text></TouchableOpacity>
+                            </View>
+                        </View>
+                    )
+                })
+            }
+
+        </View>
     )
+
 }
-
-const styles = StyleSheet.create({
-      img: {
-        height: '80px',
-        width: '80px',
-        borderRadius: '50px'
-      },
-      img_add : {
-        height: '20px',
-        width: '20px'
-      },
-      container : {
-        display: 'flex',
-        flexDirection: 'row',
-        padding: '10px',
-        alignItems: 'center',
-      },
-
-      text : {
-        fontSize: '12px',
-        width: '60vw',
-        margin: '10px'
-      },
-      text1: {
-        margin: '2px',
-        fontWeight: 'bold'
-      },
-
-      button1:{
-        backgroundColor: 'black',
-   
-      }
-    });
