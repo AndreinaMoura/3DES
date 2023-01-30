@@ -60,3 +60,5 @@ module.exports = {
     update,
     remove
 }
+
+// prisma migrate dev --name init
