@@ -1,0 +1,54 @@
+CLIENTE
+[RN001]Tela de login
+[RN001.1]Tela de cadastro
+[RN002]mostrar a ficha de exer do cliente
+[RN002.1]mostrar status e frequência
+[RN003]tela de pagamentos
+[RN004]atualiza dados do cadastro
+[RN004.1]apagar cadastro
+
+ACADEMIA
+[RN001]gestão
+[RN001.1]Tela de cadastro
+[RN001.2]listar informações do cliente
+[RN001.3]editar informações do cliente
+[RN001.4]pesquisar por cpf
+[RN001.5]cadastro de equipamentos
+
+
+NF
+
+->LINGUAGENS DE PROGRAMAÇÃO: 
+-->banco de dados: mysql, 
+-->back-end: java, 
+-->front-end: html, css, javascript, 
+-->mobile: javascript, node js.
+
+->tela de login e cadastro 
+fluídas e de fácil entendimento nas cores preto, vermelho e amarelo.
+
+tela de login:
+logar com o email e senha,
+perguntar se já possui cadastro e colocar um link para a tela de cadastro
+um botão de login que leva para a tela principal.
+
+tela de cadastro:
+pedir o nome, endereço, CPF, data de nascimento, genêro, telefone, email, senha(um digite novamente)
+botão enviar cadastro
+após o cadastro bem sucedido redirecionar para a tela de login
+
+tela principal:
+mostrar a ficha do cliente(grupos musculares e pesos)
+botao detalhar para mostrar status e frequência
+mostar o menu lateral com a ficha do cliente, tela de pagamentos, atualizar dados
+
+tela de pagamentos:
+listar pagamentos feitos 
+mostrar pagamentos próximos
+mostrar pagamentos atrasados
+
+tela de atualizar dados:
+mostrar todos os dados e a opção de alterar individualmente
+botao de atualizar
+botão de deletar a conta/cadastro
+
