@@ -9,7 +9,7 @@ CLIENTE
 
 ACADEMIA
 [RN001]gestão
-[RN001.1]Tela de cadastro
+[RN001.1]Tela de cadastro de cliente
 [RN001.2]listar informações do cliente
 [RN001.3]editar informações do cliente
 [RN001.4]pesquisar por cpf
@@ -18,23 +18,16 @@ ACADEMIA
 
 NF
 
-->LINGUAGENS DE PROGRAMAÇÃO: 
--->banco de dados: mysql, 
--->back-end: java, 
--->front-end: html, css, javascript, 
--->mobile: javascript, node js.
-
-->tela de login e cadastro 
-fluídas e de fácil entendimento nas cores preto, vermelho e amarelo.
-
 tela de login:
 logar com o email e senha,
 perguntar se já possui cadastro e colocar um link para a tela de cadastro
 um botão de login que leva para a tela principal.
+Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
 
 tela de cadastro:
 pedir o nome, endereço, CPF, data de nascimento, genêro, telefone, email, senha(um digite novamente)
-botão enviar cadastro
+Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
+Botão enviar cadastro,
 após o cadastro bem sucedido redirecionar para a tela de login
 
 tela principal:
@@ -52,3 +45,14 @@ mostrar todos os dados e a opção de alterar individualmente
 botao de atualizar
 botão de deletar a conta/cadastro
 
+academia
+
+tela de cadastro:
+pedir o nome, endereço, CPF, data de nascimento, genêro, telefone, email, senha(um digite novamente)
+Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
+Botão enviar cadastro,
+após o cadastro bem sucedido redirecionar para a tela principal
+
+tela principal ou gestão:
+listar os clientes, editar as informações do cliente, apagar cliente e pesquisar cliente por CPF.
+cadastro de equipamentos.
