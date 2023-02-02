@@ -1,4 +1,5 @@
 CLIENTE
+
 [RN001]Tela de login
 [RN001.1]Tela de cadastro
 [RN002]mostrar a ficha de exer do cliente
@@ -8,13 +9,13 @@ CLIENTE
 [RN004.1]apagar cadastro
 
 ACADEMIA
-[RN001]gestão
+
+[RN001]tela de gestão/principal
 [RN001.1]Tela de cadastro de cliente
 [RN001.2]listar informações do cliente
 [RN001.3]editar informações do cliente
 [RN001.4]pesquisar por cpf
 [RN001.5]cadastro de equipamentos
-
 
 NF
 
