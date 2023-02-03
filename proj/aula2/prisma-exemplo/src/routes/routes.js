@@ -11,6 +11,3 @@ router.put('/funcionarios/:id', Funcionarios.update);
 router.delete('/funcionarios/:id', Funcionarios.remove);
 
 module.exports = router
-
-// 192.168.56.1 ipv4
-// prisma init --datasource-provider mysql

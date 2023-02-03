@@ -1,4 +1,3 @@
-// npm i @prisma/client
 // import {PrismaClient} from '@prisma/client'
 const {PrismaClient} = require('@prisma/client')
 
@@ -61,4 +60,3 @@ module.exports = {
     remove
 }
 
-// prisma migrate dev --name init
