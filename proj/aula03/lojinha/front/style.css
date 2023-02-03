@@ -7,11 +7,12 @@
 header{
     text-align: center;
     background-color: red;
+    padding: 10px;
 }
 
 ul{
     list-style: none;
-    padding: 4px;
+    padding: 5px;
     background-color: aqua;
     width: max-content;
     height: 100vh;
