@@ -1,3 +1,5 @@
+##PRISMA
+
 npm i @prisma/client
 prisma migrate dev --name init
 
