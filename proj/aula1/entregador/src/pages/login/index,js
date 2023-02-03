@@ -1,0 +1,32 @@
+import { View, Text, TouchableOpacity, Image, StyleSheet, TextInput} from 'react-native';
+import ButtonCarrinho from '../../Components/ButtonCarrinho';
+import { useState } from 'react';
+
+import style from './src/style/style'
+
+export default function login (){
+
+    const [email,setEmail] = useState("");
+    const [senha,setSenha] = useState("");
+
+    return (
+        <View>
+            {
+                pizza.map((item, index) => {
+                    return(
+                        <View>
+                            <TextInput value={email} onChangeText={(val)=>{setEmail(val);}}/>
+                            <TextInput value={senha} onChangeText={(val)=>{setSenha(val);}}/>
+                            <TouchableOpacity onPress={()=>{ autenticar();}}>
+                            <Text>LOGIN</Text>
+                            </TouchableOpacity>
+                        </View> 
+                    )
+                })
+               
+            }
+              <ButtonCarrinho value='Carrinho' onPress={navigation.navigate('Pizzaria')} />
+           
+        </View>
+    )
+}
