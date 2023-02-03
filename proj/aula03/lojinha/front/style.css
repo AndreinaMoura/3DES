@@ -8,12 +8,23 @@ header{
     text-align: center;
     background-color: red;
     padding: 10px;
+    color: aliceblue;
 }
 
 ul{
     list-style: none;
     padding: 5px;
-    background-color: aqua;
+    background-color: greenyellow;
     width: max-content;
     height: 100vh;
+}
+
+main{
+    display: flex;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
