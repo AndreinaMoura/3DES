@@ -1,5 +1,5 @@
 const pedidos = require('../models/Pedidos.model');
-const con = require('../DAO/irango.dao')
+const con = require('../DAO/dados.dao')
 
 const criarPedido = (req, res) => {
     con.query(pedidos.novoPedido(req.body), (err, result) => {
@@ -15,6 +15,15 @@ const criarPedido = (req, res) => {
 
 const todosOsPedidos = (req, res) => {
     con.query(pedidos.mostrarPedidos(), (err, result) => {
+        if (err == null)
+            res.json(result).end();
+        else
+            res.status(500).end()
+    });
+}
+
+const todosOsProdutos = (req, res) => {
+    con.query(pedidos.mostrarProdutos(), (err, result) => {
         if (err == null)
             res.json(result).end();
         else
@@ -92,6 +101,7 @@ const deletarPedido = (req, res) => {
 module.exports = {
     criarPedido,
     todosOsPedidos,
+    todosOsProdutos,
     pedidoPorNome,
     PedidosAPreparar,
     PedidosAEntregar,

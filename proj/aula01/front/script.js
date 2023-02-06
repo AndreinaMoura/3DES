@@ -1,5 +1,5 @@
 function carregar() {
-    fetch("http://localhost:3000/gestao")
+    fetch("http://localhost:3000/todososprodutos")
         .then(response => {
             return response.json();
         })
@@ -9,11 +9,11 @@ function carregar() {
 
                 let opn = select.cloneNode(true)
 
-                opn.classList.remove("modelo")
+                // opn.classList.remove("modelo")
 
-                let op = opn.querySelector("#produto")
+                // let op = opn.querySelector(".produto")
 
-                op.innerHTML = cada.produto;
+                opn.innerHTML += ` <option value="${cada.produto}">${cada.produto}</option>`;
 
                 document.querySelector(".input").appendChild(opn);
             })

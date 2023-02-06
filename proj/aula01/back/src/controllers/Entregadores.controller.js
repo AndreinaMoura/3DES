@@ -1,5 +1,5 @@
 const entregador = require('../models/Entregadores.model');
-const con = require('../DAO/irango.dao')
+const con = require('../DAO/dados.dao')
 
 
 const listarTodosEntregadores = (req, res) => {

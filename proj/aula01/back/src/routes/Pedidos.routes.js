@@ -5,6 +5,7 @@ const Pedido = require('../controllers/Pedidos.controller');
 
 router.post("/novopedido", Pedido.criarPedido);
 router.get("/todosospedidos", Pedido.todosOsPedidos);
+router.get("/todososprodutos", Pedido.todosOsProdutos);
 router.get("/pedidopornome", Pedido.pedidoPorNome);
 router.get("/pedidosapreparar", Pedido.PedidosAPreparar);
 router.get("/pedidosaentregar", Pedido.PedidosAEntregar);

@@ -59,11 +59,8 @@ ORDER BY p.ID_Pedido;
 
 SELECT * FROM View_PedidosParaEntrega;
 
-DESCRIBE entregadores;
-DESCRIBE pedidos;
-
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/senai/3DES/proj/aula1/csv/entregadores.csv'
-LOAD DATA INFILE 'C:/Users/Andreina/Desktop/SENAI/3DES/proj/aula1/csv/entregadores.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/senai/3DES/proj/aula01/dados/entregadores.csv'
+-- LOAD DATA INFILE 'C:/Users/Andreina/Desktop/SENAI/3DES/proj/aula1/csv/entregadores.csv'
 INTO TABLE entregadores
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -71,8 +68,8 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
 
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/senai/3DES/proj/aula1/csv/pedidos.csv'
-LOAD DATA INFILE 'C:/Users/Andreina/Desktop/SENAI/3DES/proj/aula1/csv/pedidos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/senai/3DES/proj/aula01/dados/pedidos.csv'
+-- LOAD DATA INFILE 'C:/Users/Andreina/Desktop/SENAI/3DES/proj/aula1/csv/pedidos.csv'
 INTO TABLE pedidos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
