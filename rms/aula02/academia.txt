@@ -2,7 +2,7 @@ CLIENTE
 
 [RN001]Tela de login
 [RN001.1]Tela de cadastro
-[RN002]mostrar a ficha de exer do cliente
+[RN002]mostrar a ficha de exercício do cliente
 [RN002.1]mostrar status e frequência
 [RN003]tela de pagamentos
 [RN004]atualiza dados do cadastro
@@ -17,43 +17,44 @@ ACADEMIA
 [RN001.4]pesquisar por cpf
 [RN001.5]cadastro de equipamentos
 
-NF
-
-tela de login:
-logar com o email e senha,
+[NF001]tela de login:
+[NF001.1]logar com o email e senha,
 perguntar se já possui cadastro e colocar um link para a tela de cadastro
-um botão de login que leva para a tela principal.
-Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
+[NF001.2]um botão de login que leva para a tela principal.
+[NF001.3]Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
 
-tela de cadastro:
-pedir o nome, endereço, CPF, data de nascimento, genêro, telefone, email, senha(um digite novamente)
-Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
-Botão enviar cadastro,
+[NF002]tela de cadastro:
+[NF002.1]pedir o nome, endereço, CPF, data de nascimento, genêro, telefone, email, senha(um digite novamente)
+[NF002.2]Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
+[NF002.3]Botão enviar cadastro,
 após o cadastro bem sucedido redirecionar para a tela de login
 
-tela principal:
-mostrar a ficha do cliente(grupos musculares e pesos)
-botao detalhar para mostrar status e frequência
-mostar o menu lateral com a ficha do cliente, tela de pagamentos, atualizar dados
+cliente
 
-tela de pagamentos:
-listar pagamentos feitos 
-mostrar pagamentos próximos
-mostrar pagamentos atrasados
+[NF003]tela principal:
+[NF003.1]mostrar a ficha do cliente(grupos musculares e pesos)
+[NF003.2]botao detalhar para mostrar status e frequência
+[NF003.3]mostar o menu lateral com a ficha do cliente, tela de pagamentos, atualizar dados
 
-tela de atualizar dados:
-mostrar todos os dados e a opção de alterar individualmente
-botao de atualizar
-botão de deletar a conta/cadastro
+[NF004]tela de pagamentos:
+[NF004.1]listar pagamentos feitos 
+[NF004.2]mostrar pagamentos próximos
+[NF004.3]mostrar pagamentos atrasados
+
+[NF005]tela de atualizar dados:
+[NF005.1]mostrar todos os dados e a opção de alterar individualmente
+[NF005.2]botao de atualizar
+[NF005.3]botão de deletar a conta/cadastro
 
 academia
 
-tela de cadastro:
-pedir o nome, endereço, CPF, data de nascimento, genêro, telefone, email, senha(um digite novamente)
-Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
-Botão enviar cadastro,
-após o cadastro bem sucedido redirecionar para a tela principal
+[NF006]tela de cadastro:
+[NF006.1]pedir o nome, endereço, CPF, data de nascimento, genêro, telefone, email, senha(um digite novamente)
+[NF006.2]Fluída e de fácil entendimento nas cores preto, vermelho e amarelo.
+[NF006.3]Botão enviar cadastro,
+[NF006.4]após o cadastro bem sucedido redirecionar para a tela principal
 
-tela principal ou gestão:
-listar os clientes, editar as informações do cliente, apagar cliente e pesquisar cliente por CPF.
-cadastro de equipamentos.
+[NF007]tela principal ou gestão:
+[NF007.1]listar os clientes, editar as informações do cliente, apagar cliente e pesquisar cliente por CPF.
+[NF007.2]cadastro de equipamentos.
+[NF007.3]Cadastro de equipamentos deve conter um modal pedindo nome,tipo e grupo muscular.
