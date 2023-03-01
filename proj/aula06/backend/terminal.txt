@@ -56,4 +56,4 @@ added 103 packages, and audited 108 packages in 11s
 
 found 0 vulnerabilities
 
-C:\Users\Desenvolvimento\Desktop\senai\3DES\proj\aula06\backend>
+C:\Users\Desenvolvimento\Desktop\senai\3DES\proj\aula06\backend>nodemon
