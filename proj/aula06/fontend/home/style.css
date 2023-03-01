@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+header {
+    height: 10vw;
+    background-color: aqua;
+    width: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    color: red;
+    background-color: aquamarine;
+    height: 90vh;
+}
+
+aside{
+    width: 30vw;
+    background-color: blue;
+    height: 100vh;
+    color: aliceblue;
+}
