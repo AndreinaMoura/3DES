@@ -39,8 +39,8 @@ export default function Login({ navigation }) {
                 <View style={styles.divInputzinho}>
                     <TextInput style={styles.inputzinho} placeholder='Digite o email' value={value1} onChangeText={(val) => { setValue1(val) }} />
                     <TextInput style={styles.inputzinho} value={value2} onChangeText={(val1) => { setValue2(val1) }} placeholder='Digite a senha'  />
-                    <TouchableOpacity style={styles.buttonzinho}>
-                        <Text style={styles.txtbutton}>Login</Text>
+                    <TouchableOpacity style={styles.buttonzinho}  onPress={() => navigation.navigate('Home')}>
+                        <Text style={styles.txtbutton} >Login</Text>
                     </TouchableOpacity>
                 </View>
             </View>
