@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-// import styles from '../.././pages/styles/styleGeral'
+import styles from '../login/style'
 // import ButtonConectar from '../../components/btnConectar/index';
 
 export default function Login({ navigation }) {
@@ -34,12 +34,14 @@ export default function Login({ navigation }) {
 
     return (
         <View>
-            <View>
-                <Text>AgroTech</Text>
-                <Image  />
-                <View>
-                    <TextInput  placeholder='Informe o email' value={value1} onChangeText={(val) => { setValue1(val) }} />
-                    <TextInput value={value2} onChangeText={(val1) => { setValue2(val1) }} placeholder='Informe sua senha'  />
+            <View style={styles.container}>
+                <Text style={styles.titulo}>AgroTech</Text>
+                <View style={styles.divInputzinho}>
+                    <TextInput style={styles.inputzinho} placeholder='Digite o email' value={value1} onChangeText={(val) => { setValue1(val) }} />
+                    <TextInput style={styles.inputzinho} value={value2} onChangeText={(val1) => { setValue2(val1) }} placeholder='Digite a senha'  />
+                    <TouchableOpacity style={styles.buttonzinho}>
+                        <Text style={styles.txtbutton}>Login</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
