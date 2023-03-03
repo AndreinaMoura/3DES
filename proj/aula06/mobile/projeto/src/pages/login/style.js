@@ -4,7 +4,8 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding:'50px'
+    padding:'50px',
+    justifyContent: 'center',
   },
   titulo: {
     color: "#15f",
@@ -14,7 +15,7 @@ export default StyleSheet.create({
     padding: '20px'
   },
   inputzinho: {
-    width: '25vw',
+    width: '50vw',
     margin: '5px',
     backgroundColor: "#eef",
     borderRadius: '10px'

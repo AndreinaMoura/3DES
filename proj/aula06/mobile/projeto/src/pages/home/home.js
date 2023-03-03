@@ -51,45 +51,44 @@ export default function Home({ navigation }) {
     return (
         <View>
             <View>
-                <View>
-                    <View style={styles.divizinha}>
-                        <Image style={styles.image} source={require('../../../assets/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')} />
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <Text>Sair</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <TouchableOpacity>
-                        <Text>Relatórios</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Text>Manutenções</Text>
+                <View style={styles.divizinha}>
+                    <Image style={styles.image} source={require('../../../assets/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')} />
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Text style={styles.txtSair}>Sair</Text>
                     </TouchableOpacity>
                 </View>
+
+                <TouchableOpacity>
+                    <Text>Relatórios</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text>Manutenções</Text>
+                </TouchableOpacity>
             </View>
 
             <View>
                 <Text>Operações em andamento</Text>
-                <View>
-                    {
-                        operacoes.map((o, index) => {
-                            return (
-                                <ScrollView key={index}>
-                                    <Text>Id: {o.id}</Text>
-                                    <Text>Veiculo: {o.veiculo}</Text>
-                                    <Text>Motorista: {o.motorista}</Text>
-                                    <Text>Data_saida: {o.data_saida}</Text>
-                                    <Text>Descrição: {o.descricao}</Text>
-                                    <Text>Data Retorno: {o.data_retorno}</Text>
-                                    <TouchableOpacity onPress={() => { concluir(o.id, o.veiculo, o.motorista) }}>
-                                        <Text>Concluir</Text>
-                                    </TouchableOpacity>
-                                </ScrollView>
-                            )
-                        })
-                    }
+            </View>
+            <View>
+                {
+                    operacoes.map((o, index) => {
+                        return (
+                            <ScrollView key={index}>
+                                <Text>Id: {o.id}</Text>
+                                <Text>Veiculo: {o.veiculo}</Text>
+                                <Text>Motorista: {o.motorista}</Text>
+                                <Text>Data_saida: {o.data_saida}</Text>
+                                <Text>Descrição: {o.descricao}</Text>
+                                <Text>Data Retorno: {o.data_retorno}</Text>
+                                <TouchableOpacity onPress={() => { concluir(o.id, o.veiculo, o.motorista) }}>
+                                    <Text>Concluir</Text>
+                                </TouchableOpacity>
+                            </ScrollView>
+                        )
+                    })
+                }
 
-                </View>
+
             </View>
         </View>
     )
