@@ -52,14 +52,13 @@ export default function Home({ navigation }) {
         <View>
             <View>
                 <View>
-                <View style={styles.divizinha}>
-                    <Image style={styles.image} source={require('../../../assets/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')}/>
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
-                        
-                        <Text>Sair</Text>
-                    </TouchableOpacity>
-                </View>
-                    
+                    <View style={styles.divizinha}>
+                        <Image style={styles.image} source={require('../../../assets/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')} />
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <Text>Sair</Text>
+                        </TouchableOpacity>
+                    </View>
+
                     <TouchableOpacity>
                         <Text>Relatórios</Text>
                     </TouchableOpacity>
