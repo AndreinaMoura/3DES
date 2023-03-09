@@ -6,18 +6,11 @@ import styles from '../home/style'
 export default function Home({ navigation }) {
     const [operacoes, setOperacoes] = useState([])
 
-    var usuario = localStorage.getItem('user')
+    var usuario = localStorage.getItem('userdata')
 
+    const myInterval = setInterval(() => listarOperacoes(), 5000)
 
-    useEffect(() => {
-        setInterval(() => {
-            console.log('Atualizando lista')
-            listarOperacoes()
-        }, 5000)
-    }, [])
-
-
-    const listarOperacoes = () => {
+    function listarOperacoes() {
         fetch('http://localhost:3000/operacoes')
             .then(res => { return res.json() })
             .then(data => {
@@ -48,12 +41,19 @@ export default function Home({ navigation }) {
             })
     }
 
+    const voltar = () => {
+        clearInterval(myInterval)
+        // navigation.navigate('Login')
+        navigation.goBack()
+    }
+
     return (
         <View>
             <View>
                 <View style={styles.divizinha}>
+                    <Text>{usuario.nome}</Text>
                     <Image style={styles.image} source={require('../../../assets/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')} />
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <TouchableOpacity onPress={() => { voltar() }}>
                         <Text style={styles.txtSair}>Sair</Text>
                     </TouchableOpacity>
                 </View>
@@ -77,9 +77,9 @@ export default function Home({ navigation }) {
                                 <Text>Id: {o.id}</Text>
                                 <Text>Veiculo: {o.veiculo}</Text>
                                 <Text>Motorista: {o.motorista}</Text>
-                                <Text>Data_saida: {o.data_saida}</Text>
+                                <Text>Data_saida: {o.dataSaida}</Text>
                                 <Text>Descrição: {o.descricao}</Text>
-                                <Text>Data Retorno: {o.data_retorno}</Text>
+                                <Text>Data Retorno: {o.dataRetorno}</Text>
                                 <TouchableOpacity onPress={() => { concluir(o.id, o.veiculo, o.motorista) }}>
                                     <Text>Concluir</Text>
                                 </TouchableOpacity>

@@ -1,48 +1,47 @@
 import { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../login/style'
-// import ButtonConectar from '../../components/btnConectar/index';
 
 export default function Login({ navigation }) {
-    const [value1, setValue1] = useState('')
-    const [value2, setValue2] = useState('')
-    const flag = false
+    const [Email, setEmail] = useState('xuliana@email.com')
+    const [Senha, setSenha] = useState('1234')
+    const [Msg, setMsg] = useState('')
 
-    function validar() {
+    function validarLogin() {
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: `{"email":"${value1}","senha":"${value2}"}`
+            body: `{"email":"${Email}","senha":"${Senha}"}`
         };
 
-        fetch('http://localhost:3000/usuario/login', options)
+        fetch('http://localhost:3000/usuarioLogin', options)
             .then(response => response.json())
-            .then(response => {
-                if (value1 != undefined && value2 != undefined) {
-                    if (response.niveis.nivel == 'Gerencial') {
-                        localStorage.setItem('user', JSON.stringify(response))
-                        navigation.navigate('Home')
-                    }
+            .then(async response => {
+                if (response.id == undefined) {
+                    setMsg(response.Msg);
+                } else {
+                    await AsyncStorage.setItem('userdata', JSON.stringify(response[0]));
+                    setMsg("");
+                    navigation.navigate('Home');
                 }
             })
-
     }
 
     return (
         <View style={styles.container}>
             <Text style={styles.titulo}>AgroTech</Text>
             <View style={styles.divInputzinho}>
-                <TextInput style={styles.inputzinho} placeholder='Digite o email' value={value1} onChangeText={(val) => { setValue1(val) }} />
-                <TextInput style={styles.inputzinho} value={value2} onChangeText={(val1) => { setValue2(val1) }} placeholder='Digite a senha' />
-                <TouchableOpacity style={styles.buttonzinho} onPress={() => navigation.navigate('Home')}>
-                    <Text style={styles.txtbutton} >Login</Text>
+                <TextInput style={styles.inputzinho} placeholder='Digite o email' value={Email} onChangeText={(val) => { setEmail(val) }} />
+                <TextInput style={styles.inputzinho} placeholder='Digite a senha' value={Senha} onChangeText={(val1) => { setSenha(val1) }} />
+                <Text style={styles.txtErr} >{Msg}</Text>
+                <TouchableOpacity style={styles.buttonzinho} onPress={() => { validarLogin() }}>
+                    <Text style={styles.txtbutton}>Login</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
-
 }
