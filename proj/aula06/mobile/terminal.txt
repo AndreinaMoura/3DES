@@ -1,0 +1,3 @@
+npm i express cors mysql
+npm install --global expo-cli
+expo start --web
