@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: '50px',
+    padding:'50px',
     justifyContent: 'center',
   },
   titulo: {

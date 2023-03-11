@@ -34,6 +34,10 @@ const login = async (req, res) => {
 
 module.exports = {
     create,
+    // read,
+    // readOne,
+    // update,
+    // remove,
     login
 
 }
