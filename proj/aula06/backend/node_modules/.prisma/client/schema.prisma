@@ -13,4 +13,74 @@ model usuario {
   email String  @unique
   senha  String
   nivel Int
+  niveis nivel @relation(fields: [nivel], references: [id])
+}
+
+model nivel {
+  id       Int       @id @default(autoincrement())
+  nivel    String
+  usuarios usuario[]
+}
+
+model motorista {
+  id        Int         @id @default(autoincrement())
+  nome      String
+  ocupado Boolean @default(false)
+  operacoes operacoes[]
+}
+
+model tipo_veiculos {
+  id   Int    @id @default(autoincrement())
+  tipo String
+  veiculos veiculos[]
+}
+
+model veiculos {
+  id          Int           @id @default(autoincrement())
+  placa       String @unique
+  tipo        Int
+  uso  Boolean @default(false)
+  manutencoes manutencao[]
+  operacoes   operacoes[]
+  tipos       tipo_veiculos @relation(fields: [tipo], references: [id])
+}
+
+
+model operacoes {
+  id           Int      @id @default(autoincrement())
+  veiculo      Int
+  motorista    Int
+  data_saida   DateTime @default(now())
+  descricao    String
+  data_retorno DateTime? 
+  concluidas Boolean@default(false)
+  relatorios relatorio_operacao[]
+  tipos      veiculos  @relation(fields: [veiculo], references: [id])
+  motoristas motorista @relation(fields: [motorista], references: [id])
+  
+}
+
+model manutencao {
+  id          Int                    @id @default(autoincrement())
+  veiculo     Int
+  data_inicio DateTime               @default(now())
+  valor       Float
+  descricao   String
+  data_fim    DateTime?
+  concluidas Boolean@default(false)
+  manutencao  relatorio_manutencao[]
+  veiculos veiculos @relation(fields: [veiculo], references: [id])
+}
+
+model relatorio_manutencao {
+  id         Int @id @default(autoincrement())
+  manutencao Int
+  manutencoes manutencao @relation(fields: [manutencao], references: [id])
+}
+
+
+model relatorio_operacao {
+  id       Int @id @default(autoincrement())
+  operacoes Int  
+  operacao operacoes @relation(fields: [operacoes], references: [id])
 }

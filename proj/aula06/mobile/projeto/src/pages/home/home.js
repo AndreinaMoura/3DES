@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 
 import styles from '../home/style'
@@ -10,16 +10,13 @@ export default function Home({ navigation }) {
 
     const myInterval = setInterval(() => listarOperacoes(), 5000)
 
-    function listarOperacoes() {
+    const listarOperacoes = () => {
         fetch('http://localhost:3000/operacoes')
             .then(res => { return res.json() })
             .then(data => {
                 setOperacoes(data)
             })
     }
-
-    console.log(operacoes)
-
 
     const concluir = (id, veiculo, motorista) => {
         listarOperacoes(),
@@ -50,7 +47,7 @@ export default function Home({ navigation }) {
     return (
         <View>
             <View>
-                <View style={styles.divizinha}>
+            <View style={styles.divizinha}>
                     <Text>{usuario.nome}</Text>
                     <Image style={styles.image} source={require('../../../assets/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')} />
                     <TouchableOpacity onPress={() => { voltar() }}>
@@ -77,9 +74,9 @@ export default function Home({ navigation }) {
                                 <Text>Id: {o.id}</Text>
                                 <Text>Veiculo: {o.veiculo}</Text>
                                 <Text>Motorista: {o.motorista}</Text>
-                                <Text>Data_saida: {o.dataSaida}</Text>
+                                <Text>Data_saida: {o.data_saida}</Text>
                                 <Text>Descrição: {o.descricao}</Text>
-                                <Text>Data Retorno: {o.dataRetorno}</Text>
+                                <Text>Data Retorno: {o.data_retorno}</Text>
                                 <TouchableOpacity onPress={() => { concluir(o.id, o.veiculo, o.motorista) }}>
                                     <Text>Concluir</Text>
                                 </TouchableOpacity>
